@@ -14,15 +14,12 @@ class Ticket
   end
 
   def discount(discount)
-    discount = discount.to_f
-    amount_of_discount = @price * (discount / 100)
-    puts amount_of_discount
-
+    reduction = discount.to_f / 100.to_f
+    discounted = @price - (@price * reduction)
   end
-
 end
 
-ticket = Ticket.new("Town Hall", 100)
-puts ticket.discount(15)
+ticket = Ticket.new("Town Hall", 145)
+
 puts "The ticket for #{ticket.venue} has been discounted by 15% to
-  #{"%.2f" % ticket.discount(15)}."
+  $#{ticket.discount(20)}."
