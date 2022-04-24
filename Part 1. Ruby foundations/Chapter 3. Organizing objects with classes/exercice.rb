@@ -22,4 +22,4 @@ end
 ticket = Ticket.new("Town Hall", 145)
 
 puts "The ticket for #{ticket.venue} has been discounted by 15% to
-  $#{ticket.discount(20)}."
+  $#{"%.2f" % ticket.discount(20)}."
